@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Controle Financeiro</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Controle Financeiro</h1>
+        <p id="auth-error-message" class="error-message"></p> <section class="form-section" id="login-section">
+            <h2>Login</h2>
+            <form id="form-login">
+                <div class="form-control">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="form-control">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <p class="auth-switch">Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+        </section>
+
+        <section class="form-section" id="register-section" style="display: none;">
+            <h2>Criar Conta</h2>
+            <form id="form-register">
+                <div class="form-control">
+                    <label for="register-nome">Nome</label>
+                    <input type="text" id="register-nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-control">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="form-control">
+                    <label for="register-senha">Senha</label>
+                    <input type="password" id="register-senha" placeholder="Mínimo 6 caracteres" required minlength="6">
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+            <p class="auth-switch">Já tem uma conta? <a href="#" id="show-login">Faça Login</a></p>
+        </section>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

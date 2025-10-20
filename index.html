@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meu Controle Financeiro</h1>
+
+        <section id="resumo">
+            <div class="card" id="receitas-box">
+                <h3>Receitas</h3>
+                <p id="total-receitas">R$ 0,00</p>
+            </div>
+            <div class="card" id="despesas-box">
+                <h3>Despesas</h3>
+                <p id="total-despesas">R$ 0,00</p>
+            </div>
+            <div class="card" id="saldo-box">
+                <h3>Saldo Total</h3>
+                <p id="saldo-total">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Adicionar Nova Transação</h2>
+            <form id="form-transacao">
+                <div class="form-control">
+                    <label for="form-descricao">Descrição</label>
+                    <input type="text" id="form-descricao" placeholder="Ex: Salário, Aluguel" required>
+                </div>
+                
+                <div class="form-control">
+                    <label for="form-valor">Valor</label>
+                    <input type="number" id="form-valor" placeholder='Ex: 59.90 (use ponto "." para separar os centavos)' required min="0" step="0.01">
+                </div>
+
+                <div class="form-control">
+                    <label for="form-tipo">Tipo</label>
+                    <select id="form-tipo" required>
+                        <option value="receita">Receita</option>
+                        <option value="despesa">Despesa</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">Adicionar Transação</button>
+            </form>
+        </section>
+
+        <section class="historico-section">
+            <h2>Histórico</h2>
+            <ul id="lista-transacoes">
+                </ul>
+        </section>
+
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

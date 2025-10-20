@@ -1,0 +1,236 @@
+/* --- Reset Básico e Padrões Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    /* Garante que o conteúdo ocupe pelo menos a altura da tela */
+    min-height: 100vh; 
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Define uma altura mínima, mas permite crescer */
+    min-height: 100px; 
+    /* Garante que o container não seja maior que a tela no mobile */
+    align-self: flex-start; 
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+/* --- Seção de Resumo --- */
+#resumo {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+#receitas-box { background-color: #e6f7ef; }
+#despesas-box { background-color: #fff1f0; }
+#saldo-box { background-color: #e6f7ff; }
+
+.card p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#total-receitas { color: #27ae60; }
+#total-despesas { color: #c0392b; }
+#saldo-total { color: #2980b9; }
+
+
+/* --- Seção do Formulário --- */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-control input,
+.form-control select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3498db;
+}
+
+/* --- Seção do Histórico --- */
+#lista-transacoes {
+    list-style: none;
+}
+
+.item-transacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.item-transacao .descricao {
+    font-weight: 700;
+}
+
+.item-transacao .valor {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Classes que você vai adicionar via JS */
+.receita .valor {
+    color: #27ae60;
+}
+
+.despesa .valor {
+    color: #c0392b;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.item-transacao:hover .btn-delete {
+    opacity: 1;
+}
+
+
+@media (max-width: 650px) {
+    body {
+        padding-top: 0;
+        background-color: #ffffff; 
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px; 
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 100vh;
+    }
+}
+    h1 {
+        font-size: 28px; 
+    }
+
+    h2 {
+        font-size: 22px; 
+    }
+
+    
+    #resumo {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card p {
+        font-size: 22px; 
+    }
+
+    
+    .item-transacao {
+        
+        flex-wrap: wrap; 
+        padding: 12px;
+    }
+
+    .item-transacao .descricao {
+        
+        flex-basis: 100%; 
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+
+    .item-transacao .valor {
+        flex-grow: 1; 
+    }
+
+    .btn-delete {
+        opacity: 1; 
+        width: 35px; 
+        height: 35px;
+    }
+}
+
