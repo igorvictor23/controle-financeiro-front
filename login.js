@@ -113,7 +113,7 @@ formRegister.addEventListener('submit', async (e) => {
 
     try {
         // SUA LÓGICA FETCH POST PARA /auth/register AQUI
-        const response = await fetch(`${apiUrl}/auth/register`, {
+        const response = await fetch(`${apiUrl}/auth/registro`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome: nome, email: email, senha: senha })
