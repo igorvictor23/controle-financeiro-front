@@ -190,7 +190,7 @@ if (!token) {
         const tipo = transacao.tipo;
         const classeCss = (tipo === 'receita') ? 'receita' : 'despesa';
         // Usa a nova função de formatação
-        const valorFormatado = formatarParaBRL(tipo === 'despesa' ? -transacao.valor : transacao.valor); 
+        const valorFormatado = formatarParaBRL(transacao.valor); 
 
         const item = document.createElement('li');
         item.classList.add('item-transacao');
@@ -199,7 +199,7 @@ if (!token) {
 
         item.innerHTML = `
             <span class="descricao">${transacao.descricao}</span>
-            <span class="valor">${valorFormatado}</span>
+            <span class="valor">${tipo === 'despesa' ? '-' : ''}${valorFormatado}</span> 
             <button class="btn-delete" onclick="deletarTransacao('${transacao._id}')">X</button>
         `;
         

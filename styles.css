@@ -181,7 +181,8 @@ h3 {
     body {
         padding-top: 0;
         background-color: #ffffff; 
-
+    }
+    
     .container {
         width: 100%;
         max-width: 100%;
@@ -190,7 +191,7 @@ h3 {
         box-shadow: none;
         min-height: 100vh;
     }
-}
+
     h1 {
         font-size: 28px; 
     }
@@ -234,3 +235,22 @@ h3 {
     }
 }
 
+.welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+#user-name {
+    font-weight: bold;
+}
+
+.btn-logout {
+    margin-top: 30px;
+    background-color: #c0392b; /* Cor vermelha */
+}
+
+.btn-logout:hover {
+    background-color: #e74c3c;
+}
