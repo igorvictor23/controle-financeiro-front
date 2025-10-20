@@ -17,7 +17,7 @@ const registerEmailInput = document.getElementById('register-email');
 const registerSenhaInput = document.getElementById('register-senha');
 
 // A URL da sua API (Importante!)
-const apiUrl = 'http://localhost:3000'; // OU a URL do Render, se já fez deploy
+const apiUrl = 'https://iv-controle-financeiro.onrender.com/'; // OU a URL do Render, se já fez deploy
 
 // --- 2. Funções para Trocar de Tela ---
 function mostrarLogin() {
