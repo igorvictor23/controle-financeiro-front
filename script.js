@@ -144,6 +144,7 @@ if (!token) {
             console.error('Erro ao deletar transação:', error);
             alert(`Erro ao deletar: ${error.message}`);
         }
+        window.deletarTransacao = deletarTransacao;
     }
 
      /**
