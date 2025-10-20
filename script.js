@@ -15,7 +15,7 @@ if (!token) {
     console.log("Token encontrado! Carregando a aplicação...");
 
     // --- 1. Definições Globais ---
-    const apiUrl = 'https://iv-controle-financeiro.onrender.com/'; // OU a URL do seu backend no Render
+    const apiUrl = 'https://iv-controle-financeiro.onrender.com'; // OU a URL do seu backend no Render
     
     // Elementos da Interface
     const listaTransacoes = document.getElementById('lista-transacoes');
