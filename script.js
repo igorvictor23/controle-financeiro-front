@@ -204,7 +204,7 @@ if (!token) {
                 <span class="data">${dataFormatada}</span> 
             </div>
             <div class="transacao-valor-acao"> <span class="valor">${transacao.tipo === 'despesa' ? '-' : ''}${valorFormatado}</span> 
-                <button class="btn-delete" onclick="deletarTransacao('${transacao._id}')">X</button> 
+                <button class="btn-delete">X</button> 
             </div>
         `;
         
