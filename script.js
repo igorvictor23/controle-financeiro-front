@@ -201,7 +201,7 @@ if (!token) {
         item.innerHTML = `
             <span class="descricao">${transacao.descricao}</span>
             <span class="valor">${tipo === 'despesa' ? '-' : ''}${valorFormatado}</span> 
-            <button class="btn-delete" onclick="deletarTransacao('${transacao._id}')">X</button>
+            <button class="btn-delete">X</button> 
         `;
         
         // Adiciona o novo item no INÍCIO da lista para ficar mais visível
@@ -256,7 +256,28 @@ if (!token) {
     // Chama as funções para carregar os dados assim que o HTML estiver pronto
     document.addEventListener('DOMContentLoaded', () => {
         carregarTransacoes(); 
-        // Não precisa chamar atualizarResumo aqui, pois carregarTransacoes já o chama no final.
+        
     });
 
-} // --- FIM DO BLOCO 'else' ---
+    listaTransacoes.addEventListener('click', (evento) => {
+        
+        if (evento.target.classList.contains('btn-delete')) {
+            console.log('Botão Deletar clicado!'); 
+
+            
+            const itemParaDeletar = evento.target.closest('.item-transacao');
+            
+            
+            if (itemParaDeletar && itemParaDeletar.dataset.id) {
+                const idParaDeletar = itemParaDeletar.dataset.id;
+                console.log('ID encontrado para deletar:', idParaDeletar); 
+
+                
+                deletarTransacao(idParaDeletar); 
+            } else {
+                console.warn('Não foi possível encontrar o ID da transação no elemento pai.');
+            }
+        }
+    });
+
+} 
