@@ -190,6 +190,7 @@ if (!token) {
     function adicionarTransacaoNaTela(transacao) {
         const tipo = transacao.tipo;
         const classeCss = (tipo === 'receita') ? 'receita' : 'despesa';
+        const dataFormatada = new Date(transacao.dataDeCriacao).toLocaleDateString('pt-BR');
         // Usa a nova função de formatação
         const valorFormatado = formatarParaBRL(transacao.valor); 
 
@@ -198,10 +199,13 @@ if (!token) {
         item.classList.add(classeCss);
         item.dataset.id = transacao._id;
 
-        item.innerHTML = `
-            <span class="descricao">${transacao.descricao}</span>
-            <span class="valor">${tipo === 'despesa' ? '-' : ''}${valorFormatado}</span> 
-            <button class="btn-delete">X</button> 
+        item.innerHTML =`
+            <div class="transacao-info"> <span class="descricao">${transacao.descricao}</span>
+                <span class="data">${dataFormatada}</span> 
+            </div>
+            <div class="transacao-valor-acao"> <span class="valor">${transacao.tipo === 'despesa' ? '-' : ''}${formatarParaBRL(transacao.valor)}</span> 
+                <button class="btn-delete" onclick="deletarTransacao('${transacao._id}')">X</button> 
+            </div>
         `;
         
         // Adiciona o novo item no INÍCIO da lista para ficar mais visível

@@ -213,19 +213,48 @@ h3 {
     
     .item-transacao {
         
-        flex-wrap: wrap; 
-        padding: 12px;
+        display: flex; /* Mantém flexbox */
+        justify-content: space-between; /* Espaça os dois grupos (info vs valor/ação) */
+        align-items: flex-start; /* Alinha os grupos pelo topo */
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .transacao-info {
+    display: flex;
+    flex-direction: column; /* Coloca descrição acima da data */
+    margin-right: 15px; /* Espaço antes do valor */
+    flex-grow: 1; /* Ocupa o espaço disponível */
     }
 
     .item-transacao .descricao {
         
-        flex-basis: 100%; 
-        margin-bottom: 5px;
-        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 3px
+    }
+
+    .item-transacao .data {
+    font-size: 0.85em; /* Tamanho menor para a data */
+    color: #777; /* Cor cinza */
+    }
+
+    .transacao-valor-acao {
+    display: flex; /* Alinha valor e botão lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    white-space: nowrap; /* Impede que o valor quebre linha */
     }
 
     .item-transacao .valor {
-        flex-grow: 1; 
+        font-size: 18px;
+        font-weight: 700;
+        min-width: 100px; /* Ajuste se necessário */
+        text-align: right;
+        margin-left: 0; /* Removemos a margem daqui */
+        margin-right: 10px; 
     }
 
     .btn-delete {
